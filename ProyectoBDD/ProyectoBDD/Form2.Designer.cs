@@ -37,6 +37,7 @@ namespace ProyectoBDD
             this.rbAdmi = new System.Windows.Forms.RadioButton();
             this.rbCajero = new System.Windows.Forms.RadioButton();
             this.label3 = new System.Windows.Forms.Label();
+            this.btnSalir = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -73,7 +74,7 @@ namespace ProyectoBDD
             // 
             // btnEntrar
             // 
-            this.btnEntrar.Location = new System.Drawing.Point(191, 188);
+            this.btnEntrar.Location = new System.Drawing.Point(111, 188);
             this.btnEntrar.Name = "btnEntrar";
             this.btnEntrar.Size = new System.Drawing.Size(119, 48);
             this.btnEntrar.TabIndex = 4;
@@ -111,11 +112,22 @@ namespace ProyectoBDD
             this.label3.TabIndex = 7;
             this.label3.Text = "INICIAR SESION";
             // 
+            // btnSalir
+            // 
+            this.btnSalir.Location = new System.Drawing.Point(261, 188);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(122, 48);
+            this.btnSalir.TabIndex = 8;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(518, 258);
+            this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.rbCajero);
             this.Controls.Add(this.rbAdmi);
@@ -141,5 +153,6 @@ namespace ProyectoBDD
         private System.Windows.Forms.RadioButton rbAdmi;
         private System.Windows.Forms.RadioButton rbCajero;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnSalir;
     }
 }

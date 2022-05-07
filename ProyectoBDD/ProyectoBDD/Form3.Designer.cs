@@ -49,12 +49,13 @@ namespace ProyectoBDD
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(570, 193);
+            this.btnSalir.Location = new System.Drawing.Point(570, 257);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(122, 39);
             this.btnSalir.TabIndex = 2;
-            this.btnSalir.Text = "Salir del Sistema";
+            this.btnSalir.Text = "Regresar";
             this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // rbEmpleados
             // 
