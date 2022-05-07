@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RegisComida;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,14 +13,19 @@ namespace ProyectoBDD
 {
     public partial class Form3 : Form
     {
-        public Form3()
+        BaseDato bd;
+        //Form2 Menu;
+        public Form3(BaseDato dd)
         {
+            bd = dd;
             InitializeComponent();
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-
+            Form2 form = new Form2();
+            form.Show();
+            this.Visible = false;
         }
     }
 }

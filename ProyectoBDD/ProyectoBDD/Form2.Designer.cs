@@ -38,21 +38,28 @@ namespace ProyectoBDD
             this.rbCajero = new System.Windows.Forms.RadioButton();
             this.label3 = new System.Windows.Forms.Label();
             this.btnSalir = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtServer = new System.Windows.Forms.TextBox();
+            this.txtBD = new System.Windows.Forms.TextBox();
+            this.BtnExtra = new System.Windows.Forms.Button();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(157, 65);
+            this.label1.Location = new System.Drawing.Point(6, 91);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 13);
+            this.label1.Size = new System.Drawing.Size(43, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Nombre ";
+            this.label1.Text = "Usuario";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(169, 104);
+            this.label2.Location = new System.Drawing.Point(4, 118);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(61, 13);
             this.label2.TabIndex = 1;
@@ -60,31 +67,32 @@ namespace ProyectoBDD
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(210, 62);
+            this.txtNombre.Location = new System.Drawing.Point(71, 88);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(201, 20);
+            this.txtNombre.Size = new System.Drawing.Size(122, 20);
             this.txtNombre.TabIndex = 2;
             // 
             // txtContrasena
             // 
-            this.txtContrasena.Location = new System.Drawing.Point(236, 101);
+            this.txtContrasena.Location = new System.Drawing.Point(71, 115);
             this.txtContrasena.Name = "txtContrasena";
             this.txtContrasena.Size = new System.Drawing.Size(122, 20);
             this.txtContrasena.TabIndex = 3;
             // 
             // btnEntrar
             // 
-            this.btnEntrar.Location = new System.Drawing.Point(111, 188);
+            this.btnEntrar.Location = new System.Drawing.Point(111, 233);
             this.btnEntrar.Name = "btnEntrar";
             this.btnEntrar.Size = new System.Drawing.Size(119, 48);
             this.btnEntrar.TabIndex = 4;
             this.btnEntrar.Text = "Entrar";
             this.btnEntrar.UseVisualStyleBackColor = true;
+            this.btnEntrar.Click += new System.EventHandler(this.btnEntrar_Click);
             // 
             // rbAdmi
             // 
             this.rbAdmi.AutoSize = true;
-            this.rbAdmi.Location = new System.Drawing.Point(201, 133);
+            this.rbAdmi.Location = new System.Drawing.Point(12, 145);
             this.rbAdmi.Name = "rbAdmi";
             this.rbAdmi.Size = new System.Drawing.Size(88, 17);
             this.rbAdmi.TabIndex = 5;
@@ -95,7 +103,7 @@ namespace ProyectoBDD
             // rbCajero
             // 
             this.rbCajero.AutoSize = true;
-            this.rbCajero.Location = new System.Drawing.Point(201, 156);
+            this.rbCajero.Location = new System.Drawing.Point(12, 168);
             this.rbCajero.Name = "rbCajero";
             this.rbCajero.Size = new System.Drawing.Size(55, 17);
             this.rbCajero.TabIndex = 6;
@@ -114,7 +122,7 @@ namespace ProyectoBDD
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(261, 188);
+            this.btnSalir.Location = new System.Drawing.Point(261, 233);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(122, 48);
             this.btnSalir.TabIndex = 8;
@@ -122,22 +130,81 @@ namespace ProyectoBDD
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(6, 22);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(38, 13);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Server";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(6, 59);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(59, 13);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "BaseDatos";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.txtBD);
+            this.groupBox1.Controls.Add(this.txtServer);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.txtContrasena);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.txtNombre);
+            this.groupBox1.Location = new System.Drawing.Point(136, 50);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(227, 147);
+            this.groupBox1.TabIndex = 11;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Datos";
+            // 
+            // txtServer
+            // 
+            this.txtServer.Location = new System.Drawing.Point(71, 19);
+            this.txtServer.Name = "txtServer";
+            this.txtServer.Size = new System.Drawing.Size(122, 20);
+            this.txtServer.TabIndex = 11;
+            // 
+            // txtBD
+            // 
+            this.txtBD.Location = new System.Drawing.Point(71, 56);
+            this.txtBD.Name = "txtBD";
+            this.txtBD.Size = new System.Drawing.Size(122, 20);
+            this.txtBD.TabIndex = 12;
+            // 
+            // BtnExtra
+            // 
+            this.BtnExtra.Location = new System.Drawing.Point(356, 204);
+            this.BtnExtra.Name = "BtnExtra";
+            this.BtnExtra.Size = new System.Drawing.Size(26, 23);
+            this.BtnExtra.TabIndex = 12;
+            this.BtnExtra.Text = "?";
+            this.BtnExtra.UseVisualStyleBackColor = true;
+            this.BtnExtra.Click += new System.EventHandler(this.BtnExtra_Click);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(518, 258);
+            this.ClientSize = new System.Drawing.Size(518, 319);
+            this.Controls.Add(this.BtnExtra);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.rbCajero);
             this.Controls.Add(this.rbAdmi);
             this.Controls.Add(this.btnEntrar);
-            this.Controls.Add(this.txtContrasena);
-            this.Controls.Add(this.txtNombre);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Name = "Form2";
             this.Text = "Ventana de inico";
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -154,5 +221,11 @@ namespace ProyectoBDD
         private System.Windows.Forms.RadioButton rbCajero;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TextBox txtBD;
+        private System.Windows.Forms.TextBox txtServer;
+        private System.Windows.Forms.Button BtnExtra;
     }
 }

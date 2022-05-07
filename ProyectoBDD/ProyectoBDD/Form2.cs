@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RegisComida;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,7 @@ namespace ProyectoBDD
 {
     public partial class Form2 : Form
     {
+        BaseDato BD = new BaseDato();
         public Form2()
         {
             InitializeComponent();
@@ -20,6 +22,48 @@ namespace ProyectoBDD
         private void btnSalir_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btnEntrar_Click(object sender, EventArgs e)
+        {
+            string server = "localhost";
+            string bases = "informe";
+            string usuario = "root";
+            string xontra = "";
+            try
+            {
+                if(txtNombre.Text != "" 
+                    && txtContrasena.Text != ""
+                    && txtNombre.Text != ""
+                    && txtServer.Text != "")
+                {
+                    usuario = txtNombre.Text;
+                    xontra = txtContrasena.Text;
+                    bases = txtBD.Text;
+                    server = txtServer.Text;
+                }else
+                {
+                    MessageBox.Show("Los campos estan vacios por lo que se usara la ruta default");
+                }
+                BD.CambiarDatabase(server, bases, usuario, xontra);
+                BD.Conectar();
+                Form3 form = new Form3(BD);
+                form.Show();
+                this.Visible = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("" + ex);
+            }
+            
+        }
+
+        private void BtnExtra_Click(object sender, EventArgs e)
+        {
+            txtNombre.Text = "root";
+            txtContrasena.Text = "";
+            txtBD.Text= "informe";
+            txtServer.Text = "localhost";
         }
     }
 }
