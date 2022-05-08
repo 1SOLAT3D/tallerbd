@@ -11,3 +11,5 @@ Empleado
 Comida  
 ![Cliente](./Admin_Cliente.png)
 Cliente  
+![Orden](./Admin_Orden.png)
+Orden

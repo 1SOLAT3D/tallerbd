@@ -103,7 +103,21 @@ namespace ProyectoBDD
                         bd.Desconectar();
                         break;
                     case "Ordenes":
-
+                        dtgDatos.Columns.Add("DGV_Nombre_Cliente", "Nombre del cliente");
+                        dtgDatos.Columns.Add("DGV_Nombre_Empleado", "Nombre del empleado en turno");
+                        dtgDatos.Columns.Add("DGV_Pedido", "Pedido");
+                        dtgDatos.Columns.Add("DGV_Fecha_Pedido", "Fecha del pedido");
+                        dtgDatos.Columns.Add("DGV_Hora_Estimada_entrega", "NombHora Estimada de entrega");
+                        dtgDatos.Columns.Add("DGV_Prioridad", "Prioridad");
+                        query = "select * from OrdenBasico;";
+                        valor = bd.ConsultarComando(query, "");
+                        reader = valor.ExecuteReader();
+                        while (reader.Read())
+                        {
+                            dtgDatos.Rows.Add($"{reader["Nombre_Cliente"].ToString()}", $"{reader["Nombre_Empleado"].ToString()}", $"{reader["Pedido"].ToString()}", $"{reader["Fecha_pedido"].ToString()}", $"{reader["hora_estimada_entrega"].ToString()}", $"{reader["prioridad"].ToString()}");
+                        }
+                        reader.Close();
+                        bd.Desconectar();
                         break;
                     default:
 
