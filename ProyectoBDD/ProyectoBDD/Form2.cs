@@ -51,9 +51,13 @@ namespace ProyectoBDD
                 form.Show();
                 this.Visible = false;
             }
+            catch(MySql.Data.MySqlClient.MySqlException)
+            {
+                MessageBox.Show("A ocurrido un error con la auntenticacion o no encontro la base de datos, verifica bien los datos");
+            }
             catch (Exception ex)
             {
-                MessageBox.Show("" + ex);
+                MessageBox.Show("A ocurrido un error con la auntenticacion o no encontro la base de datos, verifica bien los datos");
             }
             
         }

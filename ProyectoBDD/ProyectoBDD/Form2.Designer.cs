@@ -41,8 +41,8 @@ namespace ProyectoBDD
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtServer = new System.Windows.Forms.TextBox();
             this.txtBD = new System.Windows.Forms.TextBox();
+            this.txtServer = new System.Windows.Forms.TextBox();
             this.BtnExtra = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -84,7 +84,7 @@ namespace ProyectoBDD
             this.btnEntrar.Location = new System.Drawing.Point(111, 233);
             this.btnEntrar.Name = "btnEntrar";
             this.btnEntrar.Size = new System.Drawing.Size(119, 48);
-            this.btnEntrar.TabIndex = 4;
+            this.btnEntrar.TabIndex = 1;
             this.btnEntrar.Text = "Entrar";
             this.btnEntrar.UseVisualStyleBackColor = true;
             this.btnEntrar.Click += new System.EventHandler(this.btnEntrar_Click);
@@ -165,19 +165,19 @@ namespace ProyectoBDD
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos";
             // 
-            // txtServer
-            // 
-            this.txtServer.Location = new System.Drawing.Point(71, 19);
-            this.txtServer.Name = "txtServer";
-            this.txtServer.Size = new System.Drawing.Size(122, 20);
-            this.txtServer.TabIndex = 11;
-            // 
             // txtBD
             // 
             this.txtBD.Location = new System.Drawing.Point(71, 56);
             this.txtBD.Name = "txtBD";
             this.txtBD.Size = new System.Drawing.Size(122, 20);
             this.txtBD.TabIndex = 12;
+            // 
+            // txtServer
+            // 
+            this.txtServer.Location = new System.Drawing.Point(71, 19);
+            this.txtServer.Name = "txtServer";
+            this.txtServer.Size = new System.Drawing.Size(122, 20);
+            this.txtServer.TabIndex = 11;
             // 
             // BtnExtra
             // 

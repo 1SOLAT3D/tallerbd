@@ -36,7 +36,10 @@ namespace ProyectoBDD
             this.rbClientes = new System.Windows.Forms.RadioButton();
             this.rbComidas = new System.Windows.Forms.RadioButton();
             this.rbOrdenes = new System.Windows.Forms.RadioButton();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cmbTabla = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtgDatos)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dtgDatos
@@ -110,11 +113,37 @@ namespace ProyectoBDD
             this.rbOrdenes.Text = "Ordenes";
             this.rbOrdenes.UseVisualStyleBackColor = true;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.cmbTabla);
+            this.groupBox1.Location = new System.Drawing.Point(571, 184);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(200, 49);
+            this.groupBox1.TabIndex = 8;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Informacion de la tabla";
+            // 
+            // cmbTabla
+            // 
+            this.cmbTabla.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbTabla.FormattingEnabled = true;
+            this.cmbTabla.Items.AddRange(new object[] {
+            "Datos de empleados",
+            "Clientes",
+            "Comidas",
+            "Ordenes"});
+            this.cmbTabla.Location = new System.Drawing.Point(7, 20);
+            this.cmbTabla.Name = "cmbTabla";
+            this.cmbTabla.Size = new System.Drawing.Size(166, 21);
+            this.cmbTabla.TabIndex = 0;
+            this.cmbTabla.SelectedIndexChanged += new System.EventHandler(this.CmbTabla_SelectedIndexChange);
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 353);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.rbOrdenes);
             this.Controls.Add(this.rbComidas);
             this.Controls.Add(this.rbClientes);
@@ -125,6 +154,7 @@ namespace ProyectoBDD
             this.Name = "Form3";
             this.Text = "Administrador";
             ((System.ComponentModel.ISupportInitialize)(this.dtgDatos)).EndInit();
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -139,5 +169,7 @@ namespace ProyectoBDD
         private System.Windows.Forms.RadioButton rbClientes;
         private System.Windows.Forms.RadioButton rbComidas;
         private System.Windows.Forms.RadioButton rbOrdenes;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.ComboBox cmbTabla;
     }
 }
