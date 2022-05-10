@@ -31,11 +31,7 @@ namespace ProyectoBDD
         {
             this.dtgDatos = new System.Windows.Forms.DataGridView();
             this.btnSalir = new System.Windows.Forms.Button();
-            this.rbEmpleados = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
-            this.rbClientes = new System.Windows.Forms.RadioButton();
-            this.rbComidas = new System.Windows.Forms.RadioButton();
-            this.rbOrdenes = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cmbTabla = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -54,24 +50,13 @@ namespace ProyectoBDD
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(551, 244);
+            this.btnSalir.Location = new System.Drawing.Point(551, 98);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(188, 39);
             this.btnSalir.TabIndex = 2;
             this.btnSalir.Text = "Regresar";
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
-            // 
-            // rbEmpleados
-            // 
-            this.rbEmpleados.AutoSize = true;
-            this.rbEmpleados.Location = new System.Drawing.Point(564, 49);
-            this.rbEmpleados.Name = "rbEmpleados";
-            this.rbEmpleados.Size = new System.Drawing.Size(138, 17);
-            this.rbEmpleados.TabIndex = 3;
-            this.rbEmpleados.TabStop = true;
-            this.rbEmpleados.Text = "Datos de los empleados";
-            this.rbEmpleados.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -82,44 +67,11 @@ namespace ProyectoBDD
             this.label1.TabIndex = 4;
             this.label1.Text = "DATOS";
             // 
-            // rbClientes
-            // 
-            this.rbClientes.AutoSize = true;
-            this.rbClientes.Location = new System.Drawing.Point(564, 84);
-            this.rbClientes.Name = "rbClientes";
-            this.rbClientes.Size = new System.Drawing.Size(62, 17);
-            this.rbClientes.TabIndex = 5;
-            this.rbClientes.TabStop = true;
-            this.rbClientes.Text = "Clientes";
-            this.rbClientes.UseVisualStyleBackColor = true;
-            // 
-            // rbComidas
-            // 
-            this.rbComidas.AutoSize = true;
-            this.rbComidas.Location = new System.Drawing.Point(564, 116);
-            this.rbComidas.Name = "rbComidas";
-            this.rbComidas.Size = new System.Drawing.Size(65, 17);
-            this.rbComidas.TabIndex = 6;
-            this.rbComidas.TabStop = true;
-            this.rbComidas.Text = "Comidas";
-            this.rbComidas.UseVisualStyleBackColor = true;
-            // 
-            // rbOrdenes
-            // 
-            this.rbOrdenes.AutoSize = true;
-            this.rbOrdenes.Location = new System.Drawing.Point(564, 148);
-            this.rbOrdenes.Name = "rbOrdenes";
-            this.rbOrdenes.Size = new System.Drawing.Size(65, 17);
-            this.rbOrdenes.TabIndex = 7;
-            this.rbOrdenes.TabStop = true;
-            this.rbOrdenes.Text = "Ordenes";
-            this.rbOrdenes.UseVisualStyleBackColor = true;
-            // 
             // groupBox1
             // 
             this.groupBox1.AutoSize = true;
             this.groupBox1.Controls.Add(this.cmbTabla);
-            this.groupBox1.Location = new System.Drawing.Point(551, 178);
+            this.groupBox1.Location = new System.Drawing.Point(551, 32);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(188, 60);
             this.groupBox1.TabIndex = 8;
@@ -149,11 +101,7 @@ namespace ProyectoBDD
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.groupBox1);
             this.groupBox2.Controls.Add(this.dtgDatos);
-            this.groupBox2.Controls.Add(this.rbOrdenes);
             this.groupBox2.Controls.Add(this.btnSalir);
-            this.groupBox2.Controls.Add(this.rbComidas);
-            this.groupBox2.Controls.Add(this.rbEmpleados);
-            this.groupBox2.Controls.Add(this.rbClientes);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Location = new System.Drawing.Point(0, 0);
             this.groupBox2.Name = "groupBox2";
@@ -183,11 +131,7 @@ namespace ProyectoBDD
 
         private System.Windows.Forms.DataGridView dtgDatos;
         private System.Windows.Forms.Button btnSalir;
-        private System.Windows.Forms.RadioButton rbEmpleados;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.RadioButton rbClientes;
-        private System.Windows.Forms.RadioButton rbComidas;
-        private System.Windows.Forms.RadioButton rbOrdenes;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ComboBox cmbTabla;
         private System.Windows.Forms.GroupBox groupBox2;
