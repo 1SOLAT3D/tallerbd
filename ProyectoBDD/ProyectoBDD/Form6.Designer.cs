@@ -34,111 +34,118 @@ namespace ProyectoBDD
             this.label4 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtPrecio = new System.Windows.Forms.TextBox();
-            this.rbGrande = new System.Windows.Forms.RadioButton();
-            this.rbMediana = new System.Windows.Forms.RadioButton();
-            this.rbChica = new System.Windows.Forms.RadioButton();
             this.btnCapturar = new System.Windows.Forms.Button();
+            this.dgvComida = new System.Windows.Forms.DataGridView();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.txtTamano = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvComida)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(36, 36);
+            this.label1.Location = new System.Drawing.Point(48, 44);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 13);
+            this.label1.Size = new System.Drawing.Size(58, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Nombre";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(36, 71);
+            this.label2.Location = new System.Drawing.Point(48, 87);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(40, 13);
+            this.label2.Size = new System.Drawing.Size(52, 17);
             this.label2.TabIndex = 1;
             this.label2.Text = "Precio ";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(34, 109);
+            this.label4.Location = new System.Drawing.Point(45, 134);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(46, 13);
+            this.label4.Size = new System.Drawing.Size(60, 17);
             this.label4.TabIndex = 3;
             this.label4.Text = "Tamaño";
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(86, 33);
+            this.txtNombre.Location = new System.Drawing.Point(115, 41);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(4);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(149, 20);
+            this.txtNombre.Size = new System.Drawing.Size(197, 22);
             this.txtNombre.TabIndex = 4;
             // 
             // txtPrecio
             // 
-            this.txtPrecio.Location = new System.Drawing.Point(82, 68);
+            this.txtPrecio.Location = new System.Drawing.Point(109, 84);
+            this.txtPrecio.Margin = new System.Windows.Forms.Padding(4);
             this.txtPrecio.Name = "txtPrecio";
-            this.txtPrecio.Size = new System.Drawing.Size(125, 20);
+            this.txtPrecio.Size = new System.Drawing.Size(165, 22);
             this.txtPrecio.TabIndex = 5;
-            // 
-            // rbGrande
-            // 
-            this.rbGrande.AutoSize = true;
-            this.rbGrande.Location = new System.Drawing.Point(87, 109);
-            this.rbGrande.Name = "rbGrande";
-            this.rbGrande.Size = new System.Drawing.Size(60, 17);
-            this.rbGrande.TabIndex = 6;
-            this.rbGrande.TabStop = true;
-            this.rbGrande.Text = "Grande";
-            this.rbGrande.UseVisualStyleBackColor = true;
-            // 
-            // rbMediana
-            // 
-            this.rbMediana.AutoSize = true;
-            this.rbMediana.Location = new System.Drawing.Point(87, 142);
-            this.rbMediana.Name = "rbMediana";
-            this.rbMediana.Size = new System.Drawing.Size(66, 17);
-            this.rbMediana.TabIndex = 7;
-            this.rbMediana.TabStop = true;
-            this.rbMediana.Text = "Mediana";
-            this.rbMediana.UseVisualStyleBackColor = true;
-            // 
-            // rbChica
-            // 
-            this.rbChica.AutoSize = true;
-            this.rbChica.Location = new System.Drawing.Point(87, 174);
-            this.rbChica.Name = "rbChica";
-            this.rbChica.Size = new System.Drawing.Size(52, 17);
-            this.rbChica.TabIndex = 8;
-            this.rbChica.TabStop = true;
-            this.rbChica.Text = "Chica";
-            this.rbChica.UseVisualStyleBackColor = true;
             // 
             // btnCapturar
             // 
-            this.btnCapturar.Location = new System.Drawing.Point(102, 219);
+            this.btnCapturar.Location = new System.Drawing.Point(369, 354);
+            this.btnCapturar.Margin = new System.Windows.Forms.Padding(4);
             this.btnCapturar.Name = "btnCapturar";
-            this.btnCapturar.Size = new System.Drawing.Size(105, 40);
+            this.btnCapturar.Size = new System.Drawing.Size(140, 49);
             this.btnCapturar.TabIndex = 9;
             this.btnCapturar.Text = "Capturar Comida";
             this.btnCapturar.UseVisualStyleBackColor = true;
+            this.btnCapturar.Click += new System.EventHandler(this.btnCapturar_Click);
+            // 
+            // dgvComida
+            // 
+            this.dgvComida.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvComida.Location = new System.Drawing.Point(369, 41);
+            this.dgvComida.Name = "dgvComida";
+            this.dgvComida.RowHeadersWidth = 51;
+            this.dgvComida.RowTemplate.Height = 24;
+            this.dgvComida.Size = new System.Drawing.Size(625, 278);
+            this.dgvComida.TabIndex = 10;
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Location = new System.Drawing.Point(610, 354);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(140, 49);
+            this.btnBuscar.TabIndex = 11;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // txtTamano
+            // 
+            this.txtTamano.Location = new System.Drawing.Point(109, 131);
+            this.txtTamano.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTamano.Name = "txtTamano";
+            this.txtTamano.Size = new System.Drawing.Size(165, 22);
+            this.txtTamano.TabIndex = 12;
             // 
             // Form6
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(338, 292);
+            this.ClientSize = new System.Drawing.Size(1027, 438);
+            this.Controls.Add(this.txtTamano);
+            this.Controls.Add(this.btnBuscar);
+            this.Controls.Add(this.dgvComida);
             this.Controls.Add(this.btnCapturar);
-            this.Controls.Add(this.rbChica);
-            this.Controls.Add(this.rbMediana);
-            this.Controls.Add(this.rbGrande);
             this.Controls.Add(this.txtPrecio);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form6";
             this.Text = "Datos de la comida";
+            this.Load += new System.EventHandler(this.Form6_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvComida)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -151,9 +158,9 @@ namespace ProyectoBDD
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox txtPrecio;
-        private System.Windows.Forms.RadioButton rbGrande;
-        private System.Windows.Forms.RadioButton rbMediana;
-        private System.Windows.Forms.RadioButton rbChica;
         private System.Windows.Forms.Button btnCapturar;
+        private System.Windows.Forms.DataGridView dgvComida;
+        private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.TextBox txtTamano;
     }
 }

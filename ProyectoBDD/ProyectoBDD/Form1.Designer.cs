@@ -29,10 +29,8 @@ namespace ProyectoBDD
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.label1 = new System.Windows.Forms.Label();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // progressBar1
@@ -51,10 +49,6 @@ namespace ProyectoBDD
             this.label1.TabIndex = 1;
             this.label1.Text = "Cargando Sistema";
             // 
-            // timer1
-            // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -64,7 +58,6 @@ namespace ProyectoBDD
             this.Controls.Add(this.progressBar1);
             this.Name = "Form1";
             this.Text = "Iniciando Sistema";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -74,7 +67,6 @@ namespace ProyectoBDD
 
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Timer timer1;
     }
 }
 
