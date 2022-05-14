@@ -33,7 +33,6 @@ namespace ProyectoBDD
             try
             {
                 if(txtNombre.Text != "" 
-                    && txtContrasena.Text != ""
                     && txtNombre.Text != ""
                     && txtServer.Text != "")
                 {
@@ -57,7 +56,7 @@ namespace ProyectoBDD
             }
             catch (Exception ex)
             {
-                MessageBox.Show("A ocurrido un error con la auntenticacion o no encontro la base de datos, verifica bien los datos");
+                MessageBox.Show("A ocurrido un error con la auntenticacion o no encontro la base de datos, verifica bien los datos"+ex);
             }
             
         }
