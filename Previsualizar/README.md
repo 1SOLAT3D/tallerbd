@@ -9,7 +9,7 @@
 Empleado  
 ![Comida](./Admin_Comida.png)  
 Comida  
-![Cliente](./Admin_Cliente.png)
+![Cliente](./Admin_Cliente.png)  
 Cliente  
-![Orden](./Admin_Orden.png)
+![Orden](./Admin_Orden.png)  
 Orden
