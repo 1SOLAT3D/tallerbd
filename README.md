@@ -1,5 +1,14 @@
 # tallerbd
 
+# Informacion de carpetas
+## DSQL
+### Esta carpeta estaran todas los comandos para wue sea facil obtener los comandos de sql como las vistas.  
+## Previsualizar 
+### Aqui se mostrara imagenes de como se ve para que no sea necesario entrar a la app para ver las ventanas.
+
+## ProyectoBBD
+### Esta el proyecto de c#
+
 # Ramas del repositorio
 
 ## Main

@@ -1,7 +1,8 @@
 # Vista actual de la aplicacion  
 
 ## Menu
-
+![Menu](./Menu.png)  
+Menu
 ## Ventana Caja
 
 ## Ventana Administrador
