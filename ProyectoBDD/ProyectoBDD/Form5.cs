@@ -16,5 +16,15 @@ namespace ProyectoBDD
         {
             InitializeComponent();
         }
+
+        private void Form5_Load(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnCapturar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

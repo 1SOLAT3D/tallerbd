@@ -37,7 +37,7 @@ namespace ProyectoBDD
             this.label7 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.txtPNombre = new System.Windows.Forms.TextBox();
             this.txtApPat = new System.Windows.Forms.TextBox();
             this.txtApMa = new System.Windows.Forms.TextBox();
             this.txtMembresia = new System.Windows.Forms.TextBox();
@@ -46,16 +46,18 @@ namespace ProyectoBDD
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.txtPrioridad = new System.Windows.Forms.TextBox();
             this.btnCapturar = new System.Windows.Forms.Button();
+            this.txtSNombre = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 33);
+            this.label2.Location = new System.Drawing.Point(12, 15);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(49, 13);
+            this.label2.Size = new System.Drawing.Size(76, 13);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Nombres";
+            this.label2.Text = "Primer Nombre";
             // 
             // label3
             // 
@@ -120,12 +122,12 @@ namespace ProyectoBDD
             this.label8.TabIndex = 8;
             this.label8.Text = "Prioridad";
             // 
-            // txtNombre
+            // txtPNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(68, 33);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(119, 20);
-            this.txtNombre.TabIndex = 9;
+            this.txtPNombre.Location = new System.Drawing.Point(104, 12);
+            this.txtPNombre.Name = "txtPNombre";
+            this.txtPNombre.Size = new System.Drawing.Size(151, 20);
+            this.txtPNombre.TabIndex = 9;
             // 
             // txtApPat
             // 
@@ -184,12 +186,31 @@ namespace ProyectoBDD
             this.btnCapturar.TabIndex = 17;
             this.btnCapturar.Text = "Capturar Datos";
             this.btnCapturar.UseVisualStyleBackColor = true;
+            this.btnCapturar.Click += new System.EventHandler(this.btnCapturar_Click);
+            // 
+            // txtSNombre
+            // 
+            this.txtSNombre.Location = new System.Drawing.Point(109, 39);
+            this.txtSNombre.Name = "txtSNombre";
+            this.txtSNombre.Size = new System.Drawing.Size(127, 20);
+            this.txtSNombre.TabIndex = 18;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(13, 45);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(90, 13);
+            this.label9.TabIndex = 19;
+            this.label9.Text = "Segundo Nombre";
             // 
             // Form5
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(440, 369);
+            this.ClientSize = new System.Drawing.Size(342, 369);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.txtSNombre);
             this.Controls.Add(this.btnCapturar);
             this.Controls.Add(this.txtPrioridad);
             this.Controls.Add(this.dtpFecha);
@@ -198,7 +219,7 @@ namespace ProyectoBDD
             this.Controls.Add(this.txtMembresia);
             this.Controls.Add(this.txtApMa);
             this.Controls.Add(this.txtApPat);
-            this.Controls.Add(this.txtNombre);
+            this.Controls.Add(this.txtPNombre);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label7);
@@ -209,6 +230,7 @@ namespace ProyectoBDD
             this.Controls.Add(this.label2);
             this.Name = "Form5";
             this.Text = "Datos del cliente";
+            this.Load += new System.EventHandler(this.Form5_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -224,7 +246,7 @@ namespace ProyectoBDD
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.TextBox txtPNombre;
         private System.Windows.Forms.TextBox txtApPat;
         private System.Windows.Forms.TextBox txtApMa;
         private System.Windows.Forms.TextBox txtMembresia;
@@ -233,5 +255,7 @@ namespace ProyectoBDD
         private System.Windows.Forms.DateTimePicker dtpFecha;
         private System.Windows.Forms.TextBox txtPrioridad;
         private System.Windows.Forms.Button btnCapturar;
+        private System.Windows.Forms.TextBox txtSNombre;
+        private System.Windows.Forms.Label label9;
     }
 }
