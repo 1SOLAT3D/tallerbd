@@ -1,12 +1,22 @@
 # Vista actual de la aplicacion  
 
 ## Menu
-![Menu](./Menu.png)  
+![Menu](./VInicio.png)  
 Menu
 ## Ventana Caja
+![Cajero](./VCajero.png)  
+Cajero
+
+![Cajero](./VCajero2.png)  
+Cajero  
+## Ventana Cliente 
+![Cliente](./VCliente.png)  
+Cliente
 
 ## Ventana Administrador
-![Datos del empleado](./Admin_Empleado.png)  
+![Ventana Admin](./VAdmin1.png)  
+Ventana Admin
+![Datos del empleado](./VAdmin2.png.png)  
 Empleado  
 ![Comida](./Admin_Comida.png)  
 Comida  
