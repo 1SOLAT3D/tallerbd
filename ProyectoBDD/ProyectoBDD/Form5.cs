@@ -19,6 +19,7 @@ namespace ProyectoBDD
         BaseDato bd;
         MySqlCommand valor;
         MySqlDataReader reader;
+        int indice = 0;
         public Form5(bool permiss, BaseDato db)
         {
             InitializeComponent();
@@ -40,9 +41,38 @@ namespace ProyectoBDD
                     txtSNombre.Text != "" &&
                     txtApPat.Text != "" &&
                     txtApMa.Text != "" &&
-                    txtDomicilio.Text != "")
+                    txtTelefono.Text != "" &&
+                    txtDomicilio.Text != "" &&
+                    cmbMenbresia.Text !=  "" &&
+                    cmbPrioridad.Text != "")
                 {
+                    c.NombreP = txtPNombre.Text;
+                    c.NombreS = txtSNombre.Text;
+                    c.ApellidoP = txtApPat.Text;
+                    c.ApellidoM = txtApMa.Text;
+                    c.Domicilio = txtDomicilio.Text;
+                    c.Telefono = txtTelefono.Text;
+                    c.Membresia = cmbMenbresia.Text;
+                    c.Prioridad= cmbPrioridad.Text;
 
+                    string query = "insert into nombre_completo(Primer_Nombre,Segundo_Nombre,Apellido_Paterno,Apellido_Materno) " +
+                        $"values ('{c.NombreP}','{c.NombreS}','{c.ApellidoP}','{c.ApellidoM}'); " +
+                        "insert into cliente(ID_NComp, Membresia, Domicilio, Telefono, Fecha_Alta, Prioridad) " +
+                        "values ((select ID_NComp from Nombre_Completo ORDER BY ID_NComp DESC LIMIT 1)," +
+                        $"'{c.Membresia}','{c.Domicilio}','{c.Telefono}',now(),'{c.Prioridad}'); ";
+                    DialogResult result = MessageBox.Show("Deseas insertar ese cliente?", "Cliente", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (result == DialogResult.Yes)
+                    {
+                        bd.Insertar(query);
+                        MessageBox.Show("Se inserto con exito");
+                    }else
+                    {
+                        MessageBox.Show("Se cancelo la insercion");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Debes llenar todos los campos");
                 }
             }
             catch (Exception)
@@ -211,8 +241,23 @@ namespace ProyectoBDD
 
         private void btnRapido_Click(object sender, EventArgs e)
         {
-            txtPNombre.Text = "Alan";
-            txtApPat.Text = "Bartolome";
+            if(indice == 0)
+            {
+                txtPNombre.Text = "Alan";
+                txtApPat.Text = "Bartolome";
+                indice = 1;
+            }else
+            {
+                txtPNombre.Text = "Roberton";
+                txtSNombre.Text = "Samuel";
+                txtApPat.Text = "Quijada";
+                txtApMa.Text = "Maldonado";
+                cmbMenbresia.SelectedIndex = 0;
+                txtDomicilio.Text = "Local";
+                txtTelefono.Text = "777-777-777";
+                cmbPrioridad.SelectedIndex = 0;
+                indice = 0;
+            }
         }
 
         private void BtnBorrar_Click(object sender, EventArgs e)
@@ -233,6 +278,18 @@ namespace ProyectoBDD
 
                 MessageBox.Show("Error");
             }
+        }
+
+        private void SelectedIndexChanged_cmbMembresia(object sender, EventArgs e)
+        {
+            //int x = cmbMenbresia.SelectedIndex;
+            //MessageBox.Show("a " + x);
+        }
+
+        private void SelectinChanged_cmbMembresia(object sender, EventArgs e)
+        {
+            //int x = cmbMenbresia.SelectedIndex;
+            //MessageBox.Show("a " + x);
         }
     }
 }

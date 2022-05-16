@@ -234,6 +234,8 @@ namespace ProyectoBDD
             this.cmbMenbresia.Name = "cmbMenbresia";
             this.cmbMenbresia.Size = new System.Drawing.Size(157, 21);
             this.cmbMenbresia.TabIndex = 24;
+            this.cmbMenbresia.SelectedIndexChanged += new System.EventHandler(this.SelectedIndexChanged_cmbMembresia);
+            this.cmbMenbresia.SelectionChangeCommitted += new System.EventHandler(this.SelectinChanged_cmbMembresia);
             // 
             // btnRapido
             // 
