@@ -47,6 +47,10 @@ namespace ProyectoBDD
                 }
                 BD.CambiarDatabase(server, bases, usuario, xontra);
                 BD.Conectar();
+                if(cmbUsuario.Text == "")
+                {
+
+                }else
                 if(cmbUsuario.SelectedIndex ==0)
                 {
                     Form3 form = new Form3(BD);
