@@ -14,6 +14,7 @@ namespace ProyectoBDD
     public partial class Form2 : Form
     {
         BaseDato BD = new BaseDato();
+        int indice = 0;
         public Form2()
         {
             InitializeComponent();
@@ -32,11 +33,11 @@ namespace ProyectoBDD
             string xontra = "";
             try
             {
-                if(txtNombre.Text != "" 
-                    && txtNombre.Text != ""
+                if(cmbUsuario.Text != "" 
+                    && cmbUsuario.Text != ""
                     && txtServer.Text != "")
                 {
-                    usuario = txtNombre.Text;
+                    usuario = cmbUsuario.Text;
                     xontra = txtContrasena.Text;
                     bases = txtBD.Text;
                     server = txtServer.Text;
@@ -46,25 +47,42 @@ namespace ProyectoBDD
                 }
                 BD.CambiarDatabase(server, bases, usuario, xontra);
                 BD.Conectar();
-                Form3 form = new Form3(BD);
-                form.Show();
+                if(cmbUsuario.Text == "")
+                {
+
+                }else
+                if(cmbUsuario.SelectedIndex ==0)
+                {
+                    Form3 form = new Form3(BD);
+                    form.Show();
+                }else
+                {
+                    Form4 form = new Form4(BD);
+                    form.Show();
+                }
                 this.Visible = false;
             }
             catch(MySql.Data.MySqlClient.MySqlException)
             {
                 MessageBox.Show("A ocurrido un error con la auntenticacion o no encontro la base de datos, verifica bien los datos");
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show("A ocurrido un error con la auntenticacion o no encontro la base de datos, verifica bien los datos"+ex);
+                MessageBox.Show("A ocurrido un error con la auntenticacion o no encontro la base de datos, verifica bien los datos");
             }
             
         }
 
         private void BtnExtra_Click(object sender, EventArgs e)
         {
-            txtNombre.Text = "root";
-            txtContrasena.Text = "";
+            cmbUsuario.SelectedIndex = indice;
+            if(indice <cmbUsuario.Items.Count-1)
+            {
+                indice++;
+            }else
+            {
+                indice = 0;
+            }
             txtBD.Text= "informe";
             txtServer.Text = "localhost";
         }

@@ -31,11 +31,8 @@ namespace ProyectoBDD
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtContrasena = new System.Windows.Forms.TextBox();
             this.btnEntrar = new System.Windows.Forms.Button();
-            this.rbAdmi = new System.Windows.Forms.RadioButton();
-            this.rbCajero = new System.Windows.Forms.RadioButton();
             this.label3 = new System.Windows.Forms.Label();
             this.btnSalir = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
@@ -44,6 +41,7 @@ namespace ProyectoBDD
             this.txtBD = new System.Windows.Forms.TextBox();
             this.txtServer = new System.Windows.Forms.TextBox();
             this.BtnExtra = new System.Windows.Forms.Button();
+            this.cmbUsuario = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,13 +63,6 @@ namespace ProyectoBDD
             this.label2.TabIndex = 1;
             this.label2.Text = "Contraseña";
             // 
-            // txtNombre
-            // 
-            this.txtNombre.Location = new System.Drawing.Point(71, 88);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(122, 20);
-            this.txtNombre.TabIndex = 2;
-            // 
             // txtContrasena
             // 
             this.txtContrasena.Location = new System.Drawing.Point(71, 115);
@@ -88,28 +79,6 @@ namespace ProyectoBDD
             this.btnEntrar.Text = "Entrar";
             this.btnEntrar.UseVisualStyleBackColor = true;
             this.btnEntrar.Click += new System.EventHandler(this.btnEntrar_Click);
-            // 
-            // rbAdmi
-            // 
-            this.rbAdmi.AutoSize = true;
-            this.rbAdmi.Location = new System.Drawing.Point(12, 145);
-            this.rbAdmi.Name = "rbAdmi";
-            this.rbAdmi.Size = new System.Drawing.Size(88, 17);
-            this.rbAdmi.TabIndex = 5;
-            this.rbAdmi.TabStop = true;
-            this.rbAdmi.Text = "Administrador";
-            this.rbAdmi.UseVisualStyleBackColor = true;
-            // 
-            // rbCajero
-            // 
-            this.rbCajero.AutoSize = true;
-            this.rbCajero.Location = new System.Drawing.Point(12, 168);
-            this.rbCajero.Name = "rbCajero";
-            this.rbCajero.Size = new System.Drawing.Size(55, 17);
-            this.rbCajero.TabIndex = 6;
-            this.rbCajero.TabStop = true;
-            this.rbCajero.Text = "Cajero";
-            this.rbCajero.UseVisualStyleBackColor = true;
             // 
             // label3
             // 
@@ -150,6 +119,7 @@ namespace ProyectoBDD
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cmbUsuario);
             this.groupBox1.Controls.Add(this.txtBD);
             this.groupBox1.Controls.Add(this.txtServer);
             this.groupBox1.Controls.Add(this.label2);
@@ -157,7 +127,6 @@ namespace ProyectoBDD
             this.groupBox1.Controls.Add(this.txtContrasena);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.txtNombre);
             this.groupBox1.Location = new System.Drawing.Point(136, 50);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(227, 147);
@@ -189,6 +158,18 @@ namespace ProyectoBDD
             this.BtnExtra.UseVisualStyleBackColor = true;
             this.BtnExtra.Click += new System.EventHandler(this.BtnExtra_Click);
             // 
+            // cmbUsuario
+            // 
+            this.cmbUsuario.FormattingEnabled = true;
+            this.cmbUsuario.Items.AddRange(new object[] {
+            "root",
+            "cajero",
+            "cajero1"});
+            this.cmbUsuario.Location = new System.Drawing.Point(71, 88);
+            this.cmbUsuario.Name = "cmbUsuario";
+            this.cmbUsuario.Size = new System.Drawing.Size(121, 21);
+            this.cmbUsuario.TabIndex = 13;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -198,8 +179,6 @@ namespace ProyectoBDD
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.rbCajero);
-            this.Controls.Add(this.rbAdmi);
             this.Controls.Add(this.btnEntrar);
             this.Name = "Form2";
             this.Text = "Ventana de inico";
@@ -214,11 +193,8 @@ namespace ProyectoBDD
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox txtContrasena;
         private System.Windows.Forms.Button btnEntrar;
-        private System.Windows.Forms.RadioButton rbAdmi;
-        private System.Windows.Forms.RadioButton rbCajero;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Label label4;
@@ -227,5 +203,6 @@ namespace ProyectoBDD
         private System.Windows.Forms.TextBox txtBD;
         private System.Windows.Forms.TextBox txtServer;
         private System.Windows.Forms.Button BtnExtra;
+        private System.Windows.Forms.ComboBox cmbUsuario;
     }
 }
