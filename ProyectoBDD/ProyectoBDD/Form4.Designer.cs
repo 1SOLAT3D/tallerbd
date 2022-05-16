@@ -35,19 +35,24 @@ namespace ProyectoBDD
             this.lblLetreroCliente = new System.Windows.Forms.Label();
             this.lblEmpleado = new System.Windows.Forms.Label();
             this.gbCOrden = new System.Windows.Forms.GroupBox();
-            this.cmbCombos = new System.Windows.Forms.ComboBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnCombo = new System.Windows.Forms.Button();
-            this.btnFinalizar = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.lblTotal = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btnComida = new System.Windows.Forms.Button();
             this.cmbComida = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnCombo = new System.Windows.Forms.Button();
+            this.cmbCombos = new System.Windows.Forms.ComboBox();
+            this.btnFinalizar = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtPago = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.lblClock = new System.Windows.Forms.Label();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.rdbPequeño = new System.Windows.Forms.RadioButton();
+            this.rdbMediano = new System.Windows.Forms.RadioButton();
+            this.rdbGrande = new System.Windows.Forms.RadioButton();
+            this.rdbEGrande = new System.Windows.Forms.RadioButton();
             this.dtg_Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dtg_Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dtg_FechaPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,9 +60,10 @@ namespace ProyectoBDD
             this.dtg_Monto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dtgCajero)).BeginInit();
             this.gbCOrden.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnOrden
@@ -81,7 +87,7 @@ namespace ProyectoBDD
             this.dtg_Monto});
             this.dtgCajero.Location = new System.Drawing.Point(172, 46);
             this.dtgCajero.Name = "dtgCajero";
-            this.dtgCajero.Size = new System.Drawing.Size(577, 170);
+            this.dtgCajero.Size = new System.Drawing.Size(683, 170);
             this.dtgCajero.TabIndex = 3;
             // 
             // btnRegresar
@@ -114,80 +120,35 @@ namespace ProyectoBDD
             // 
             // gbCOrden
             // 
-            this.gbCOrden.Controls.Add(this.label2);
+            this.gbCOrden.Controls.Add(this.groupBox4);
+            this.gbCOrden.Controls.Add(this.lblTotal);
             this.gbCOrden.Controls.Add(this.label1);
             this.gbCOrden.Controls.Add(this.groupBox3);
             this.gbCOrden.Controls.Add(this.groupBox1);
             this.gbCOrden.Location = new System.Drawing.Point(172, 223);
             this.gbCOrden.Name = "gbCOrden";
-            this.gbCOrden.Size = new System.Drawing.Size(577, 139);
+            this.gbCOrden.Size = new System.Drawing.Size(683, 139);
             this.gbCOrden.TabIndex = 7;
             this.gbCOrden.TabStop = false;
             this.gbCOrden.Text = "Cuadro de ordenes";
             // 
-            // cmbCombos
+            // lblTotal
             // 
-            this.cmbCombos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbCombos.FormattingEnabled = true;
-            this.cmbCombos.Items.AddRange(new object[] {
-            "Amigos",
-            "Familiar",
-            "Extra Queso",
-            "Grande",
-            "Infantil",
-            "Batman",
-            "Fiesta"});
-            this.cmbCombos.Location = new System.Drawing.Point(6, 19);
-            this.cmbCombos.Name = "cmbCombos";
-            this.cmbCombos.Size = new System.Drawing.Size(165, 21);
-            this.cmbCombos.TabIndex = 0;
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Location = new System.Drawing.Point(557, 46);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(40, 13);
+            this.lblTotal.TabIndex = 4;
+            this.lblTotal.Text = "$00.00";
             // 
-            // groupBox1
+            // label1
             // 
-            this.groupBox1.Controls.Add(this.btnCombo);
-            this.groupBox1.Controls.Add(this.cmbCombos);
-            this.groupBox1.Location = new System.Drawing.Point(6, 19);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(200, 114);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Combos";
-            // 
-            // btnCombo
-            // 
-            this.btnCombo.Location = new System.Drawing.Point(7, 78);
-            this.btnCombo.Name = "btnCombo";
-            this.btnCombo.Size = new System.Drawing.Size(164, 30);
-            this.btnCombo.TabIndex = 1;
-            this.btnCombo.Text = "Insertar";
-            this.btnCombo.UseVisualStyleBackColor = true;
-            this.btnCombo.Click += new System.EventHandler(this.btnCombo_Click);
-            // 
-            // btnFinalizar
-            // 
-            this.btnFinalizar.Location = new System.Drawing.Point(22, 178);
-            this.btnFinalizar.Name = "btnFinalizar";
-            this.btnFinalizar.Size = new System.Drawing.Size(129, 38);
-            this.btnFinalizar.TabIndex = 8;
-            this.btnFinalizar.Text = "Finalizar orden";
-            this.btnFinalizar.UseVisualStyleBackColor = true;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.textBox1);
-            this.groupBox2.Location = new System.Drawing.Point(22, 102);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(129, 58);
-            this.groupBox2.TabIndex = 9;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Cantidad de pago";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(7, 20);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(116, 20);
-            this.textBox1.TabIndex = 0;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(554, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(30, 13);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Tolal";
             // 
             // groupBox3
             // 
@@ -229,24 +190,72 @@ namespace ProyectoBDD
             this.cmbComida.Name = "cmbComida";
             this.cmbComida.Size = new System.Drawing.Size(165, 21);
             this.cmbComida.TabIndex = 0;
+            this.cmbComida.SelectedIndexChanged += new System.EventHandler(this.cmbComida_SelectedIndexChanged);
             // 
-            // label1
+            // groupBox1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(453, 19);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(30, 13);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Tolal";
+            this.groupBox1.Controls.Add(this.btnCombo);
+            this.groupBox1.Controls.Add(this.cmbCombos);
+            this.groupBox1.Location = new System.Drawing.Point(6, 19);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(200, 114);
+            this.groupBox1.TabIndex = 1;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Combos";
             // 
-            // label2
+            // btnCombo
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(456, 45);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(40, 13);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "$00.00";
+            this.btnCombo.Location = new System.Drawing.Point(7, 78);
+            this.btnCombo.Name = "btnCombo";
+            this.btnCombo.Size = new System.Drawing.Size(164, 30);
+            this.btnCombo.TabIndex = 1;
+            this.btnCombo.Text = "Insertar";
+            this.btnCombo.UseVisualStyleBackColor = true;
+            this.btnCombo.Click += new System.EventHandler(this.btnCombo_Click);
+            // 
+            // cmbCombos
+            // 
+            this.cmbCombos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCombos.FormattingEnabled = true;
+            this.cmbCombos.Items.AddRange(new object[] {
+            "Amigos",
+            "Familiar",
+            "Extra Queso",
+            "Grande",
+            "Infantil",
+            "Batman",
+            "Fiesta"});
+            this.cmbCombos.Location = new System.Drawing.Point(6, 19);
+            this.cmbCombos.Name = "cmbCombos";
+            this.cmbCombos.Size = new System.Drawing.Size(165, 21);
+            this.cmbCombos.TabIndex = 0;
+            // 
+            // btnFinalizar
+            // 
+            this.btnFinalizar.Location = new System.Drawing.Point(22, 178);
+            this.btnFinalizar.Name = "btnFinalizar";
+            this.btnFinalizar.Size = new System.Drawing.Size(129, 38);
+            this.btnFinalizar.TabIndex = 8;
+            this.btnFinalizar.Text = "Finalizar orden";
+            this.btnFinalizar.UseVisualStyleBackColor = true;
+            this.btnFinalizar.Click += new System.EventHandler(this.btnFinalizar_Click);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.txtPago);
+            this.groupBox2.Location = new System.Drawing.Point(22, 102);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(129, 58);
+            this.groupBox2.TabIndex = 9;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Cantidad de pago";
+            // 
+            // txtPago
+            // 
+            this.txtPago.Location = new System.Drawing.Point(7, 20);
+            this.txtPago.Name = "txtPago";
+            this.txtPago.Size = new System.Drawing.Size(116, 20);
+            this.txtPago.TabIndex = 0;
             // 
             // label3
             // 
@@ -266,6 +275,61 @@ namespace ProyectoBDD
             this.lblClock.TabIndex = 11;
             this.lblClock.Text = "00:00";
             // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.rdbEGrande);
+            this.groupBox4.Controls.Add(this.rdbGrande);
+            this.groupBox4.Controls.Add(this.rdbMediano);
+            this.groupBox4.Controls.Add(this.rdbPequeño);
+            this.groupBox4.Location = new System.Drawing.Point(445, 13);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(93, 120);
+            this.groupBox4.TabIndex = 5;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Tamaño";
+            // 
+            // rdbPequeño
+            // 
+            this.rdbPequeño.AutoSize = true;
+            this.rdbPequeño.Checked = true;
+            this.rdbPequeño.Location = new System.Drawing.Point(7, 20);
+            this.rdbPequeño.Name = "rdbPequeño";
+            this.rdbPequeño.Size = new System.Drawing.Size(68, 17);
+            this.rdbPequeño.TabIndex = 0;
+            this.rdbPequeño.TabStop = true;
+            this.rdbPequeño.Text = "Pequeño";
+            this.rdbPequeño.UseVisualStyleBackColor = true;
+            // 
+            // rdbMediano
+            // 
+            this.rdbMediano.AutoSize = true;
+            this.rdbMediano.Location = new System.Drawing.Point(7, 44);
+            this.rdbMediano.Name = "rdbMediano";
+            this.rdbMediano.Size = new System.Drawing.Size(66, 17);
+            this.rdbMediano.TabIndex = 1;
+            this.rdbMediano.Text = "Mediano";
+            this.rdbMediano.UseVisualStyleBackColor = true;
+            // 
+            // rdbGrande
+            // 
+            this.rdbGrande.AutoSize = true;
+            this.rdbGrande.Location = new System.Drawing.Point(7, 70);
+            this.rdbGrande.Name = "rdbGrande";
+            this.rdbGrande.Size = new System.Drawing.Size(60, 17);
+            this.rdbGrande.TabIndex = 2;
+            this.rdbGrande.Text = "Grande";
+            this.rdbGrande.UseVisualStyleBackColor = true;
+            // 
+            // rdbEGrande
+            // 
+            this.rdbEGrande.AutoSize = true;
+            this.rdbEGrande.Location = new System.Drawing.Point(7, 96);
+            this.rdbEGrande.Name = "rdbEGrande";
+            this.rdbEGrande.Size = new System.Drawing.Size(85, 17);
+            this.rdbEGrande.TabIndex = 3;
+            this.rdbEGrande.Text = "Extra grande";
+            this.rdbEGrande.UseVisualStyleBackColor = true;
+            // 
             // dtg_Nombre
             // 
             this.dtg_Nombre.HeaderText = "Nombre";
@@ -283,12 +347,14 @@ namespace ProyectoBDD
             this.dtg_FechaPedido.HeaderText = "Fecha del pedido";
             this.dtg_FechaPedido.Name = "dtg_FechaPedido";
             this.dtg_FechaPedido.ReadOnly = true;
+            this.dtg_FechaPedido.Width = 150;
             // 
             // dtg_Hora_Estimada
             // 
             this.dtg_Hora_Estimada.HeaderText = "Hora estimada de entrega";
             this.dtg_Hora_Estimada.Name = "dtg_Hora_Estimada";
             this.dtg_Hora_Estimada.ReadOnly = true;
+            this.dtg_Hora_Estimada.Width = 170;
             // 
             // dtg_Monto
             // 
@@ -300,7 +366,7 @@ namespace ProyectoBDD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 374);
+            this.ClientSize = new System.Drawing.Size(867, 374);
             this.Controls.Add(this.lblClock);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.groupBox2);
@@ -316,10 +382,12 @@ namespace ProyectoBDD
             ((System.ComponentModel.ISupportInitialize)(this.dtgCajero)).EndInit();
             this.gbCOrden.ResumeLayout(false);
             this.gbCOrden.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -340,11 +408,16 @@ namespace ProyectoBDD
         private System.Windows.Forms.ComboBox cmbCombos;
         private System.Windows.Forms.Button btnFinalizar;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtPago;
+        private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblClock;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.RadioButton rdbEGrande;
+        private System.Windows.Forms.RadioButton rdbGrande;
+        private System.Windows.Forms.RadioButton rdbMediano;
+        private System.Windows.Forms.RadioButton rdbPequeño;
         private System.Windows.Forms.DataGridViewTextBoxColumn dtg_Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn dtg_Cantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn dtg_FechaPedido;

@@ -1,4 +1,5 @@
-﻿using RegisComida;
+﻿using MySql.Data.MySqlClient;
+using RegisComida;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,7 +18,10 @@ namespace ProyectoBDD
         Cliente cliente = new Cliente();
         string NombreEmpleado = "Angie Tatiana Fernandez Martinez";
         int IDE = 1;
+        MySqlCommand valor;
+        MySqlDataReader reader;
         DateTime UltimaHora;
+        double total = 0;
         public Form4(BaseDato db)
         {
             InitializeComponent();
@@ -67,37 +71,69 @@ namespace ProyectoBDD
             {
                 if(cmbComida.Text != "")
                 {
-                    int Año = UltimaHora.Year;
-                    int Mes = UltimaHora.Month;
-                    int Day = UltimaHora.Day;
-                    int Hora = UltimaHora.Hour;
-                    int Min = UltimaHora.Minute;
-                    int Seg = UltimaHora.Second;
-                    string formato = $"{Año}-{Mes}-{Day} {Hora}:{Min}:{Seg}";
-                    int MinExtra;
-                    if (cliente.Prioridad == "Baja")
+                    BD.Conectar();
+                    string tamañ;
+                    if(rdbPequeño.Checked)
                     {
-                        MinExtra = 20;
-                    }
-                    else if (cliente.Prioridad == "Media")
+                        tamañ = "Pequeño";
+                    }else if(rdbMediano.Checked)
                     {
-                        MinExtra = 15;
-                    }
-                    else
+                        tamañ = "Mediano";
+                    }else if(rdbGrande.Checked)
                     {
-                        MinExtra = 12;
+                        tamañ = "Grande";
+                    }else
+                    {
+                        tamañ = "Extra Grande";
                     }
-                    UltimaHora = UltimaHora.AddMinutes(MinExtra);
-                    Año = UltimaHora.Year;
-                    Mes = UltimaHora.Month;
-                    Day = UltimaHora.Day;
-                    Hora = UltimaHora.Hour;
-                    Min = UltimaHora.Minute;
-                    Seg = UltimaHora.Second;
-                    string formato2 = $"{Año}-{Mes}-{Day} {Hora}:{Min}:{Seg}";
-                    string query = "insert into orden " +
-                        $"values ({cliente.ID_Cliente},0,{cmbComida.Text},'{formato}','{formato2}',{IDE});";
-                    BD.Insertar(query);
+                    string query = $"select * from comida where nombre = '{cmbComida.Text}' and Tamaño = '{tamañ}';";
+                    BD.Conectar();
+                    valor = BD.ConsultarComando(query, "");
+                    reader = valor.ExecuteReader();
+                    string ID= "";
+                    while (reader.Read())
+                    {
+                        ID = reader["ID_Comida"].ToString();
+                    }
+                    reader.Close();
+                    BD.Desconectar();
+                    if(ID != null && ID != "")
+                    {
+                        int Año = UltimaHora.Year;
+                        int Mes = UltimaHora.Month;
+                        int Day = UltimaHora.Day;
+                        int Hora = UltimaHora.Hour;
+                        int Min = UltimaHora.Minute;
+                        int Seg = UltimaHora.Second;
+                        string formato = UltimaHora.ToString("yyyy-MM-dd hh:mm:ss");
+                        int MinExtra;
+                        if (cliente.Prioridad == "Baja")
+                        {
+                            MinExtra = 20;
+                        }
+                        else if (cliente.Prioridad == "Media")
+                        {
+                            MinExtra = 15;
+                        }
+                        else
+                        {
+                            MinExtra = 12;
+                        }
+                        DateTime UltimaHora2 = UltimaHora.AddMinutes(MinExtra);
+                        Año = UltimaHora2.Year;
+                        Mes = UltimaHora2.Month;
+                        Day = UltimaHora2.Day;
+                        Hora = UltimaHora2.Hour;
+                        Min = UltimaHora2.Minute;
+                        Seg = UltimaHora2.Second;
+                        string formato2 = UltimaHora2.ToString("yyyy-MM-dd hh:mm:ss");
+                        query = "insert into orden " +
+                            $"values ({cliente.ID_Cliente},0,{ID},'{formato}','{formato2}',{IDE});";
+                        BD.Insertar(query);
+                    }else
+                    {
+                        MessageBox.Show("No se encontro");
+                    }
                 }
                 else
                 {
@@ -116,38 +152,60 @@ namespace ProyectoBDD
             {
                 if(cmbCombos.Text != "")
                 {
-                    int Año = UltimaHora.Year;
-                    int Mes = UltimaHora.Month;
-                    int Day = UltimaHora.Day;
-                    int Hora = UltimaHora.Hour;
-                    int Min = UltimaHora.Minute;
-                    int Seg = UltimaHora.Second;
-                    string formato = $"{Año}-{Mes}-{Day} {Hora}:{Min}:{Seg}";
-                    int MinExtra;
-                    if(cliente.Prioridad == "Baja")
+                    BD.Conectar();
+                    string query = "select * from combo " +
+                        $"where Nombre_Combo = '{cmbCombos.Text}';";
+                    BD.Conectar();
+                    valor = BD.ConsultarComando(query, "");
+                    reader = valor.ExecuteReader();
+                    string ID = "";
+                    while (reader.Read())
                     {
-                        MinExtra = 20;
-                    }else if (cliente.Prioridad == "Media")
+                        ID = reader["ID_Combo"].ToString();
+                    }
+                    reader.Close();
+                    BD.Desconectar();
+                    if (ID != null && ID != "")
                     {
-                        MinExtra = 15;
+                        int Año = UltimaHora.Year;
+                        int Mes = UltimaHora.Month;
+                        int Day = UltimaHora.Day;
+                        int Hora = UltimaHora.Hour;
+                        int Min = UltimaHora.Minute;
+                        int Seg = UltimaHora.Second;
+                        string formato = UltimaHora.ToString("yyyy-MM-dd hh:mm:ss");
+                        int MinExtra;
+                        if (cliente.Prioridad == "Baja")
+                        {
+                            MinExtra = 20;
+                        }
+                        else if (cliente.Prioridad == "Media")
+                        {
+                            MinExtra = 15;
+                        }
+                        else
+                        {
+                            MinExtra = 12;
+                        }
+                        DateTime UltimaHora2 = UltimaHora.AddMinutes(MinExtra);
+                        Año = UltimaHora2.Year;
+                        Mes = UltimaHora2.Month;
+                        Day = UltimaHora2.Day;
+                        Hora = UltimaHora2.Hour;
+                        Min = UltimaHora2.Minute;
+                        Seg = UltimaHora2.Second;
+                        string formato2 = UltimaHora2.ToString("yyyy-MM-dd hh:mm:ss");
+                        query = "insert into orden " +
+                            $"values ({cliente.ID_Cliente},{ID},0,'{formato}','{formato2}',{IDE});";
+                        BD.Insertar(query);
+                        ActualizarTabla();
                     }
                     else
                     {
-                        MinExtra = 12;
+                        MessageBox.Show("No se encontro");
                     }
-                    UltimaHora = UltimaHora.AddMinutes(MinExtra);
-                     Año = UltimaHora.Year;
-                   Mes = UltimaHora.Month;
-                    Day = UltimaHora.Day;
-                    Hora = UltimaHora.Hour;
-                     Min = UltimaHora.Minute;
-                    Seg = UltimaHora.Second;
-                    string formato2 = $"{Año}-{Mes}-{Day} {Hora}:{Min}:{Seg}";
-                    string query = "insert into orden " +
-                        $"values ({cliente.ID_Cliente},{cmbCombos.Text},0,'{formato}','{formato2}',{IDE});";
-                    BD.Insertar(query);
-                    //MessageBox.Show("");
-                }else
+                }
+                else
                 {
                     MessageBox.Show("Elige un comba antes de introducirlo");
                 }
@@ -155,6 +213,96 @@ namespace ProyectoBDD
             catch (Exception)
             {
                 MessageBox.Show("Error inesperado en el boton comida");
+            }
+        }
+
+        private void cmbComida_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+        private void ActualizarTabla()
+        {
+            try
+            {
+                dtgCajero.Rows.Clear();
+                BD.Conectar();
+                int Año = UltimaHora.Year;
+                int Mes = UltimaHora.Month;
+                int Day = UltimaHora.Day;
+                int Hora = UltimaHora.Hour;
+                int Min = UltimaHora.Minute;
+                int Seg = UltimaHora.Second;
+                string formato = UltimaHora.ToString("yyyy-MM-dd hh:mm:ss");
+                string query = "select * from OrdenDetalle " +
+                    $"where Fecha_Pedido = '{formato}' and ID_Cliente = {cliente.ID_Cliente};";
+                valor = BD.ConsultarComando(query, "");
+                reader = valor.ExecuteReader();
+                double x;
+                while (reader.Read())
+                {
+                    dtgCajero.Rows.Add(reader["Nombre"].ToString(), reader["Cantidad"].ToString(), reader["Fecha_Pedido"].ToString(), reader["Hora_Estimada_Entrega"].ToString(), reader["Precio"].ToString());
+                    x = int.Parse(reader["Precio"].ToString());
+                    total += x;
+                }
+                reader.Close();
+                BD.Desconectar();
+                lblTotal.Text = "$" + total;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error inesperado con la tabla");
+            }
+        }
+
+        private void btnFinalizar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if(gbCOrden.Enabled)
+                {
+                    if (txtPago.Text != "")
+                    {
+                        int x = int.Parse(txtPago.Text);
+                        if(total == 0)
+                        {
+                            MessageBox.Show("Introduce un pedido primero");
+                        }
+                        else if (x > total)
+                        {
+                            MessageBox.Show("Cambio a dar: $" + (x - total));
+                            cliente.Estado = false;
+                            gbCOrden.Enabled = false;
+                            dtgCajero.Rows.Clear();
+                        }
+                        else
+                        {
+                            MessageBox.Show("El pago es mas pequeño que el total");
+                        }
+
+                    }
+                    else
+                    {
+                        DialogResult result = MessageBox.Show("Deseas cancelar todo el pedido?", "Cancelar?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        if (result == DialogResult.Yes)
+                        {
+                            string query = "delete from orden " +
+                                $"where Fecha_Pedido >= '{UltimaHora.ToString("yyyy-MM-dd hh:mm:ss")}' and ID_Cliente = {cliente.ID_Cliente};";
+                            BD.Insertar(query);
+                            MessageBox.Show("Se elimino con exito");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Debes introducir una cantidad con la que se pago.");
+                        }
+                    }
+                }else
+                {
+                    MessageBox.Show("Debes elegir un cliente primero");
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Ocurrio un error inesperado");
             }
         }
     }
